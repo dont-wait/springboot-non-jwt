@@ -38,22 +38,11 @@ public class BuildingAPI {
 	@PostMapping(value="api/building")
 	public Object getBuilding(@RequestBody Buildingdto request) {
 		//Xu li duoi db rui`
-		//h tra ve cho client
-		try {
-			validate(request);
-		} catch (FieldRequiredExeption e) {
-			ErrorResponseDto err = new ErrorResponseDto();
-			err.setError(e.getMessage());
-			List<String> details = new ArrayList<String>();
-			details.add("Check again name or numberOfBasement because u have null field");
-			
-			err.setDetails(details);
-			return err;
-		}
+		validate(request);
 		return null;
 	}
 	
-	private void validate(Buildingdto request) throws FieldRequiredExeption {
+	private void validate(Buildingdto request) {
 		if(request.getName().isEmpty() || request.getName() == null || request.getNumberOfBasement() == null)
 			throw new FieldRequiredExeption("name or number of base is null");
 	}
