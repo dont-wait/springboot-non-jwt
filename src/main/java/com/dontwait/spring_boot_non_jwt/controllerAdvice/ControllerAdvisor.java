@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import com.dontwait.spring_boot_non_jwt.dto.ErrorResponseDto;
 import com.dontwait.spring_boot_non_jwt.exceptions.FieldRequiredExeption;
+import com.dontwait.spring_boot_non_jwt.models.ErrorResponseDto;
 
 @ControllerAdvice
 public class ControllerAdvisor extends ResponseEntityExceptionHandler {

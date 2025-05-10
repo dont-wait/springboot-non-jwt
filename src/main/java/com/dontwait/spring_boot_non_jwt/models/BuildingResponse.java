@@ -1,10 +1,9 @@
-package com.dontwait.spring_boot_non_jwt.dto;
+package com.dontwait.spring_boot_non_jwt.models;
 
-public class Buildingdto {
+public class BuildingResponse {
 	private String name;
 	private Integer numberOfBasement;
-	private String ward;
-	private String street;
+	private String address;
 	
 	
 	public String getName() {
@@ -19,18 +18,13 @@ public class Buildingdto {
 	public void setNumberOfBasement(Integer numberOfBasement) {
 		this.numberOfBasement = numberOfBasement;
 	}
-	public String getWard() {
-		return ward;
+	public String getAddress() {
+		return address;
 	}
-	public void setWard(String ward) {
-		this.ward = ward;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-	public String getStreet() {
-		return street;
-	}
-	public void setStreet(String street) {
-		this.street = street;
-	}
+	
 	
 	
 }

@@ -1,27 +1,30 @@
 package com.dontwait.spring_boot_non_jwt.api;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dontwait.spring_boot_non_jwt.dto.Buildingdto;
-import com.dontwait.spring_boot_non_jwt.dto.ErrorResponseDto;
 import com.dontwait.spring_boot_non_jwt.exceptions.FieldRequiredExeption;
+import com.dontwait.spring_boot_non_jwt.models.BuildingResponse;
+import com.dontwait.spring_boot_non_jwt.services.BuildingService;
 
 
 @RestController
 public class BuildingAPI {
-//	@GetMapping("/test")
-//	public String testAPI() {
-//		return "Hello world";
-//	}
+	
+	@Autowired
+	private BuildingService buildingService;
+	
+	@GetMapping("/test")
+	public String testAPI() {
+		System.out.println("Hellow world");
+		return "Hello world";
+	}
 	
 	
 	//Neu tren client gui ve CO' KEY vidu "name=" nhung KO CO VALUE :)) 
@@ -35,14 +38,12 @@ public class BuildingAPI {
 		//EMPTY: CO KEY-KO VALUE
 	//... CAC KIEU DU LIEU CON LAI THI AUTO NULL NEU KO BAT KI FIELD HOAC VALUE = EMPTY 
 	// AUTO-NULL
-	@PostMapping(value="api/building")
-	public Object getBuilding(@RequestBody Buildingdto request) {
-		//Xu li duoi db rui`
-		validate(request);
-		return null;
+	@GetMapping(value="api/building")
+	public List<BuildingResponse> getBuilding(@RequestParam(name="name") String name) {
+		return buildingService.findAll(name);
 	}
 	
-	private void validate(Buildingdto request) {
+	private void validate(BuildingResponse request) {
 		if(request.getName().isEmpty() || request.getName() == null || request.getNumberOfBasement() == null)
 			throw new FieldRequiredExeption("name or number of base is null");
 	}

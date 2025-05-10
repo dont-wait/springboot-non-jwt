@@ -1,4 +1,4 @@
-package com.dontwait.spring_boot_non_jwt.dto;
+package com.dontwait.spring_boot_non_jwt.models;
 
 import java.util.List;
 
