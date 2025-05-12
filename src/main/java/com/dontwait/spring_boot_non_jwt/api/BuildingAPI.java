@@ -39,8 +39,10 @@ public class BuildingAPI {
 	//... CAC KIEU DU LIEU CON LAI THI AUTO NULL NEU KO BAT KI FIELD HOAC VALUE = EMPTY 
 	// AUTO-NULL
 	@GetMapping(value="api/building")
-	public List<BuildingResponse> getBuilding(@RequestParam(name="name") String name) {
-		return buildingService.findAll(name);
+	public List<BuildingResponse> getBuilding(@RequestParam(name="name", required = false) String name,
+											  @RequestParam(name="districtId", required = false) Long districtId,
+											  @RequestParam(name="typeCode", required = false) List<String> typeCode) {
+		return buildingService.findAll(name, districtId);
 	}
 	
 	private void validate(BuildingResponse request) {

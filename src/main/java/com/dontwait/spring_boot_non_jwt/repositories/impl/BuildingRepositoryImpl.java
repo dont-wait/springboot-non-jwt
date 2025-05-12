@@ -20,14 +20,22 @@ public class BuildingRepositoryImpl implements BuildingRepository{
 	static final String PASS = "sa123";
 	
 	@Override
-	public List<Building> findAll(String name) {
+	public List<Building> findAll(String name, Long districtId) {
 		// TODO Auto-generated method stub
 		//Xu li duoi db rui`
+		StringBuilder sql = new StringBuilder("SELECT * FROM building b WHERE 1 = 1 ");
+		
+		if(name != null && !name.equals(""))
+			sql.append("AND b.name LIKE '%").append(name).append("%' ");
+		
+		if(districtId != null)
+			sql.append("AND b.districtid = ").append(districtId).append(" ");
+		
+		
 		List<Building> result = new ArrayList<Building>();
-		String sql = "SELECT * FROM building where name LIKE'%" + name + "%'";
 		try(Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
 				Statement stm = conn.createStatement();
-				ResultSet rs = stm.executeQuery(sql);) {
+				ResultSet rs = stm.executeQuery(sql.toString());) {
 			
 			while(rs.next()) {
 				Building building= new Building();
