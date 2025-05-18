@@ -3,6 +3,13 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+### FILE LOCAL ###
+.mvn/wrapper
+.gitattributes
+.gitignore
+mvnw
+mvnw.cmd
+
 
 ### STS ###
 .apt_generated
