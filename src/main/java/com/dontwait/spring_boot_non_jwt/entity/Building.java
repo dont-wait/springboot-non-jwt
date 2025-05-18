@@ -6,34 +6,32 @@ public class Building {
 	private String street;
 	private String ward;
 	private Integer districtId;
-	private String structe;
+	private String structure;
 	private Integer numberOfBasement;
 	private Double floorArea;
 	private String direction;
 	private String level;
 	private Integer rentPrice;
-	private Integer rentPriceDescripsion;
-
+	private Integer rentPriceDescription;
 	private String managerName;
 	private String managerPhoneNumber;
-	
 	public Building() {
 	}
 
-	public Building(String name, String street, String ward, Integer districtId, String structe,
+	public Building(String name, String street, String ward, Integer districtId, String structure,
 			Integer numberOfBasement, Double floorArea, String direction, String level, Integer rentPrice,
-			Integer rentPriceDescripsion, String managerName, String managerPhoneNumber) {
+			Integer rentPriceDescription, String managerName, String managerPhoneNumber) {
 		this.name = name;
 		this.street = street;
 		this.ward = ward;
 		this.districtId = districtId;
-		this.structe = structe;
+		this.structure = structure;
 		this.numberOfBasement = numberOfBasement;
 		this.floorArea = floorArea;
 		this.direction = direction;
 		this.level = level;
 		this.rentPrice = rentPrice;
-		this.rentPriceDescripsion = rentPriceDescripsion;
+		this.rentPriceDescription = rentPriceDescription;
 		this.managerName = managerName;
 		this.managerPhoneNumber = managerPhoneNumber;
 	}
@@ -70,12 +68,12 @@ public class Building {
 		this.districtId = districtId;
 	}
 
-	public String getStructe() {
-		return structe;
+	public String getstructure() {
+		return structure;
 	}
 
-	public void setStructe(String structe) {
-		this.structe = structe;
+	public void setstructure(String structure) {
+		this.structure = structure;
 	}
 
 	public Integer getNumberOfBasement() {
@@ -118,12 +116,12 @@ public class Building {
 		this.rentPrice = rentPrice;
 	}
 
-	public Integer getRentPriceDescripsion() {
-		return rentPriceDescripsion;
+	public Integer getRentPriceDescription() {
+		return rentPriceDescription;
 	}
 
-	public void setRentPriceDescripsion(Integer rentPriceDescripsion) {
-		this.rentPriceDescripsion = rentPriceDescripsion;
+	public void setRentPriceDescription(Integer rentPriceDescription) {
+		this.rentPriceDescription = rentPriceDescription;
 	}
 
 	public String getManagerName() {
@@ -141,10 +139,4 @@ public class Building {
 	public void setManagerPhoneNumber(String managerPhoneNumber) {
 		this.managerPhoneNumber = managerPhoneNumber;
 	}
-	
-	
-	
-	
-	
-	
 }

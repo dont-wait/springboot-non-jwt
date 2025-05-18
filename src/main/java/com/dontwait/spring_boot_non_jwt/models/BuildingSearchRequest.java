@@ -4,15 +4,15 @@ import java.util.List;
 
 public class BuildingSearchRequest {
 	private String name;
-	private Double floorArea;
+	private Integer floorArea;
 	private Integer districtId;
 	private String ward;
 	private String street;
 	private Integer numberOfBasement;
 	private String direction;
 	private String level;
-	private Double areaFrom;
-	private Double areaTo;
+	private Integer areaFrom;
+	private Integer areaTo;
 	private Integer rentPriceFrom;
 	private Integer rentPriceTo;
 	private String managerName;
@@ -20,19 +20,16 @@ public class BuildingSearchRequest {
 	private Integer staffId;
 	private List<String> rentTypeId; //code
 
-
-    
-
     public String getName() {
         return name;
     }
     public void setName(String name) {
         this.name = name;
     }
-    public Double getFloorArea() {
+    public Integer getFloorArea() {
         return floorArea;
     }
-    public void setFloorArea(Double floorArea) {
+    public void setFloorArea(Integer floorArea) {
         this.floorArea = floorArea;
     }
     public Integer getDistrictId() {
@@ -71,16 +68,16 @@ public class BuildingSearchRequest {
     public void setLevel(String level) {
         this.level = level;
     }
-    public Double getAreaFrom() {
+    public Integer getAreaFrom() {
         return areaFrom;
     }
-    public void setAreaFrom(Double areaFrom) {
+    public void setAreaFrom(Integer areaFrom) {
         this.areaFrom = areaFrom;
     }
-    public Double getAreaTo() {
+    public Integer getAreaTo() {
         return areaTo;
     }
-    public void setAreaTo(Double areaTo) {
+    public void setAreaTo(Integer areaTo) {
         this.areaTo = areaTo;
     }
     public Integer getRentPriceFrom() {
@@ -120,5 +117,4 @@ public class BuildingSearchRequest {
         this.rentTypeId = rentTypeId;
     }
 
-    
 }
