@@ -20,9 +20,6 @@ public class BuildingSearchRequest {
 	private Integer staffId;
 	private List<String> rentTypeId; //code
 
-
-    
-
     public String getName() {
         return name;
     }
@@ -120,5 +117,4 @@ public class BuildingSearchRequest {
         this.rentTypeId = rentTypeId;
     }
 
-    
 }
